@@ -41,7 +41,7 @@
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
-
+//begining of split
 static int	words_enumerator(const char *s, char c)
 {
 	int	i;
@@ -123,9 +123,7 @@ char	**ft_split(char const *s, char c)
 	words[j] = 0;
 	return (words);
 }
-
-
-
+// end of split
 int check_string(char *str)
 {
     int i = 0;
@@ -192,3 +190,5 @@ int main(int arc, char **arv)
         }
     }        
 }
+// deals with empty strings/spaces, non numeric chars, signal in wrong place,one or multiple arguments;
+// missing duplicate values, bigger than a 32 bits int
