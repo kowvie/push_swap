@@ -12,5 +12,5 @@ typedef struct s_stack
 {
     t_node  *top;
     int     size;
-    char    a;   // 'a' ou 'b'
+    char    a;
 }   t_stack;
