@@ -128,9 +128,8 @@ int check_string(char *str)
 {
     int i = 0;
 
-    // if (!str)
-    //     return (write(1, "empty", 5), 0);
-    printf ("str: %s\n", str);
+    if (!str)
+        return (write(1, "empty", 5), 0);
     if (str[i] == '-' || str[i] == '+')
         i++;    
     while (str[i] != '\0')
