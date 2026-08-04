@@ -30,6 +30,14 @@ typedef struct s_ps
 	t_node	*b;
 }	t_ps;
 
+typedef	enum e_strategy
+{
+	SIMPLE,
+	MEDIUM,
+	COMPLEX,
+	ADAPTIVE
+}	t_strategy;
+
 t_node	*new_node(int value);
 void	stack_add_front(t_node **stack, t_node *new);
 void	stack_add_back(t_node **stack, t_node *new);
@@ -55,6 +63,18 @@ void	rb(t_node **b);
 void	rr(t_node **a, t_node **b);
 void	print_op(char *op);
 void    reverse_rotate(t_node **stack);
+int is_valid_number(char *str);
+long    ft_atol(const char *str);
+int     is_int_range(char *str);
+void    error_exit(void);
+int	has_duplicate(t_node *stack, int value);
+void	error_free(t_node **stack);
+t_node	*parse_args(int argc, char **argv);
+double  compute_disorder(t_node *a);
+int is_strategy_flag(char *arg);
+t_strategy get_strategy(char *arg);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+t_strategy  select_adaptive(double disorder);
 
 void	print_stack_reverse(t_node *stack);
 #endif
