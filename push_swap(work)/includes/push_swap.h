@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/07/30 12:26:29 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/05 15:47:58 by husobral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ void	rb(t_node **b);
 void	rr(t_node **a, t_node **b);
 void	print_op(char *op);
 void    reverse_rotate(t_node **stack);
+void    rra(t_node **a);
+void    rrb(t_node **b);
+void    rrr(t_node **a, t_node **b);
 int is_valid_number(char *str);
 long    ft_atol(const char *str);
 int     is_int_range(char *str);
@@ -75,6 +78,15 @@ int is_strategy_flag(char *arg);
 t_strategy get_strategy(char *arg);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 t_strategy  select_adaptive(double disorder);
+void    move_to_top(t_node **a, t_node *target);
+void    move_to_top_b(t_node **b, t_node *target);
+int get_position(t_node *stack, t_node *target);
+void    simple_sort(t_node **a, t_node **b);
+void    assign_indexes(t_node *stack);
+t_node	*find_unindexed_min(t_node *stack);
+int		int_sqrt(int n);
+t_node	*find_max_index(t_node *stack);
+void    medium_sort(t_node **a, t_node **b);
 
 void	print_stack_reverse(t_node *stack);
 #endif

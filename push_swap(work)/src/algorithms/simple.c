@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/05 11:33:26 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/05 11:33:26 by husobral         ###   ########.fr       */
+/*   Created: 2026/08/05 11:31:41 by husobral          #+#    #+#             */
+/*   Updated: 2026/08/05 13:58:44 by husobral         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    error_exit(void)
+void    simple_sort(t_node **a, t_node **b)
 {
-    write(2, "Error\n", 6);
-    exit(1);
-}
-
-void    error_free(t_node **stack)
-{
-    free_stack(stack);
-    write(2, "Error\n", 6);
-    exit(1);
+    t_node  *min;
+    
+    if (is_sorted(*a))
+        return ;
+    while (*a != NULL)
+    {
+        min = find_min_node(*a);
+        move_to_top(a, min);
+        pb(a, b);
+    }
+    while (*b != NULL)
+    {
+        pa (a, b);
+    }
 }
