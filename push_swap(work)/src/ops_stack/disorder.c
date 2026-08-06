@@ -6,11 +6,11 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/04 13:40:44 by jsilva-r          #+#    #+#             */
-/*   Updated: 2026/08/04 13:40:47 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:34:55 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
  
 double	compute_disorder(t_node *a)
 {

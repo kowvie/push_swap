@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:26 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/05 11:33:26 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:35:27 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void    error_exit(void)
 {

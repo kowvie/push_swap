@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   stack_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42porto.com>    +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:29:42 by husobral          #+#    #+#             */
-/*   Updated: 2026/07/30 13:42:55 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:35:14 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_node	*new_node(int value)
 {

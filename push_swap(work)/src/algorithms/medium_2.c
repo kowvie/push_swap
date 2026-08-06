@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   medium_2.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 15:21:53 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/05 15:38:03 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:34:35 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void    assign_indexes(t_node *stack)
 {

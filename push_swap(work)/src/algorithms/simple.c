@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:31:41 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/05 13:58:44 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:34:51 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 void    simple_sort(t_node **a, t_node **b)
 {

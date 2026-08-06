@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   medium.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 14:08:32 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/05 15:47:52 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:34:48 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_node	*find_unindexed_min(t_node *stack)
 {

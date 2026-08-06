@@ -3,7 +3,6 @@
 ## Description
 Push_swap is a algorithim projects where the data in two stacks `a` and `b`, must be sorted by ascending order in a limited number of operations.
 
-
 Operations include:
 - `sa` (swap a): Swap the first two elements at the top of stack a. Do nothing if there is only one or no elements.
 - `sb` (swap b): Swap the first two elements at the top of stack b. Do nothing if there is only one or no elements.
@@ -22,7 +21,7 @@ The project makes us implement four sorting strategies using the push_swap opera
 - `Medium algorithm  (O(n√n))` we decided on :
 - `Complex algorithm (O(n log n))` we decided on: 
 
-The projects has a `disorder metric` that we need to implement not only to know how disorganized is the stack but it will also be usefull in our `Custom algorithm`
+The projects has a `disorder metric` that we need to implement not only to know how disorganized is the stack but it will also be usefull in our `Custom algorithm`. Its mandatory to measure the disorder before doing any moves.
 
 As mention above, it's also required to create a `custom adaptive algorithm (learner's design)` where our adaptive strategy selects diffrent internal methods depending on the mesured `disorder`
 
@@ -32,8 +31,13 @@ O(n√n) time.
 - `High disorder` the method must run in O(n log n)
 time.
 
-
 ### Explanation of the algorithm
+only god knows
+### Learners's contributions
+husobral :
+
+jsilva-r: 
+
 ## Instructions
 ## Resources
 ### How AI was used?
