@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:50 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/06 11:36:26 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/06 11:51:18 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,34 +50,6 @@ int is_strategy_flag(char *arg)
     if (ft_strncmp(arg, "--adaptive", 11) == 0)
         return (1);
     return (0);
-}
-
-double  compute_disorder(t_node *a)
-{
-    t_node  *current;
-    t_node  *compare;
-    int mistakes;
-    int total_pairs;
-
-    mistakes = 0;
-    total_pairs = 0;
-    current = a;
-
-    while (current)
-    {
-        compare = current->next;
-        while (compare)
-        {
-            total_pairs++;
-            if (current->value > compare->value)
-                mistakes++;
-            compare = compare->next;
-        }
-        current = current->next;
-    }
-    if (total_pairs == 0)
-        return (0.0);
-    return ((double)mistakes / total_pairs);
 }
 
 t_strategy  select_adaptive(double disorder)
