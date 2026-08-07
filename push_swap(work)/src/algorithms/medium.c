@@ -29,7 +29,7 @@ t_node	*find_unindexed_min(t_node *stack)
 	return (min);
 }
 
-static void	push_chunks(t_node **a, t_node **b, int chunk_size)
+static void	push_chunks(t_node **a, t_node **b, int chunk_size, t_bench *bench)
 {
 	int	limit;
 	int	pushed;
@@ -40,29 +40,29 @@ static void	push_chunks(t_node **a, t_node **b, int chunk_size)
 	{
 		if ((*a)->index < limit)
 		{
-			pb(a, b);
+			pb(a, b, bench);
 			pushed++;
 			if (pushed == limit)
 				limit += chunk_size;
 		}
 		else
-			ra(a);
+			ra(a, bench);
 	}
 }
 
-static void push_back_sorted(t_node **a, t_node **b)
+static void push_back_sorted(t_node **a, t_node **b, t_bench *bench)
 {
     t_node  *max;
 
     while (*b)
     {
         max = find_max_index(*b);
-        move_to_top_b(b, max);
-        pa(a, b);
+        move_to_top_b(b, max, bench);
+        pa(a, b, bench);
     }
 }
 
-void    medium_sort(t_node **a, t_node **b)
+void    medium_sort(t_node **a, t_node **b, t_bench *bench)
 {
     int size;
     int chunk_size;
@@ -72,8 +72,8 @@ void    medium_sort(t_node **a, t_node **b)
     assign_indexes(*a);
     size = stack_size(*a);
     chunk_size = int_sqrt(size);
-    push_chunks(a, b, chunk_size);
-    push_back_sorted(a, b);
+    push_chunks(a, b, chunk_size, bench);
+    push_back_sorted(a, b, bench);
 }
 
 t_node	*find_max_index(t_node *stack)

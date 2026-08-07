@@ -38,21 +38,24 @@ void    swap(t_node **stack)
     return ;
 }
 
-void    ss(t_node **a, t_node **b)
+void    ss(t_node **a, t_node **b, t_bench *bench)
 {
     swap(a);
     swap(b);
     print_op("ss");
+    bench_count(bench, OP_SS);
 }
 
-void    sa(t_node **a)
+void    sa(t_node **a, t_bench *bench)
 {
     swap(a);
     print_op("sa");
+    bench_count(bench, OP_SA);
 }
 
-void    sb(t_node **b)
+void    sb(t_node **b, t_bench *bench)
 {
     swap(b);
     print_op("sb");
+    bench_count(bench, OP_SB);
 }

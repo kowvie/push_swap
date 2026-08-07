@@ -26,27 +26,30 @@ void    reverse_rotate(t_node **stack)
     last->prev = NULL;
 }
 
-void    rra(t_node **a)
+void    rra(t_node **a, t_bench *bench)
 {
     if (!a || !*a || !(*a)->next)
         return ;
     reverse_rotate(a);
     print_op("rra");
+    bench_count(bench, OP_RRA);
 }
 
-void    rrb(t_node **b)
+void    rrb(t_node **b, t_bench *bench)
 {
     if (!b || !*b || !(*b)->next)
         return ;
     reverse_rotate(b);
     print_op("rrb");
+    bench_count(bench, OP_RRB);
 }
 
-void    rrr(t_node **a, t_node **b)
+void    rrr(t_node **a, t_node **b, t_bench *bench)
 {
     if ((!a || !*a || !(*a)->next) && (!b || !*b || !(*b)->next))
         return ;
     reverse_rotate(a);
     reverse_rotate(b);
     print_op("rrr");
+    bench_count(bench,OP_RRR);
 }

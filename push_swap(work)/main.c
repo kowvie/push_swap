@@ -13,17 +13,17 @@
 #include "includes/push_swap.h"
 #include <stdio.h>
 
-static void	print_stack(t_node *stack)
-{
-	while (stack)
-	{
-		printf("%d", stack->value);
-		if (stack->next)
-			printf(" ");
-		stack = stack->next;
-	}
-	printf("\n");
-}
+// static void	print_stack(t_node *stack)
+// {
+// 	while (stack)
+// 	{
+// 		printf("%d", stack->value);
+// 		if (stack->next)
+// 			printf(" ");
+// 		stack = stack->next;
+// 	}
+// 	printf("\n");
+// }
 t_strategy	apply_strat(t_flags *flags)
 {
 	if (flags->simple)
@@ -34,6 +34,19 @@ t_strategy	apply_strat(t_flags *flags)
 		return (COMPLEX)
 	else
 		return (ADAPTIVE);
+}
+void	run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench)
+{
+	bench->requested = strategy;
+	bench->executed = strategy;
+	if (strategy == SIMPLE)
+		simple_sort(a, b, bench);
+	else if (strategy == MEDIUM)
+		medium_sort(a, b, bench);
+	else if (strategy == COMPLEX)
+		//add complex funtion 
+	else
+		// add adaptive function
 }
 
 int	main(int argc, char **argv)
@@ -55,6 +68,16 @@ int	main(int argc, char **argv)
 		return (0);
 	b = NULL;
 	strategy = apply_strat(&flags);
+	bench_init(&bench);
+	bench.active = flag.bench;
+	bench.disorder = compute_disorder(a);
+	run_strat(strategy, &a, &b, &bench)
+	print_bench(&bench);
+	free_stack(&a);
+	free_stack(&b);
+	return (0);
+}
+
 	// printf("Antes:\n");
 	// printf("A: ");
 	// print_stack(a);
@@ -71,4 +94,3 @@ int	main(int argc, char **argv)
 	// free_stack(&a);
 	// free_stack(&b);
 	// return (0);
-}

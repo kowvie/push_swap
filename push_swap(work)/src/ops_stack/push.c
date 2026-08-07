@@ -29,18 +29,20 @@ void    push(t_node **src, t_node **dest)
     *dest = node;
 }
 
-void    pa(t_node **a, t_node **b)
+void    pa(t_node **a, t_node **b, t_bench *bench)
 {
     if (!a || !b || !*b)
         return ;
     push(b, a);
     print_op("pa");
+    bench_count(bench, OP_PA);
 }
 
-void    pb(t_node **a, t_node **b)
+void    pb(t_node **a, t_node **b, t_bench *bench)
 {
     if (!b || !a || !*a)
         return ;
     push(a, b);
     print_op("pb");
+    bench_(bench, OP_PB);
 }

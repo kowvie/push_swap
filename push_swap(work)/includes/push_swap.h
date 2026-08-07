@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/07 13:12:47 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/07 16:22:12 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef	enum e_strategy
 	ADAPTIVE
 }	t_strategy;
 
+// jess 
 typedef struct s_flags
 {
 	bool	simple;
@@ -47,6 +48,32 @@ typedef struct s_flags
 	bool 	adaptive;
 	bool	bench;
 }	t_flags;
+
+typedef enum e_countop
+{
+	OP_SA,
+	OP_SB,
+	OP_SS,
+	OP_PA,
+	OP_PB,
+	OP_RA,
+	OP_RB,
+	OP_RR,
+	OP_RRA,
+	OP_RRB,
+	OP_RRR,
+	OP_COUNT
+}	t_countop;
+
+typedef struct s_bench
+{
+	int	active;
+	long	counts[OP_COUNT];
+	long	total;
+	double	disorder;
+	t_strategy requested;
+	t_strategy executed;
+}	t_bench;
 
 t_node	*new_node(int value);
 void	stack_add_front(t_node **stack, t_node *new);
@@ -61,21 +88,21 @@ t_node	*find_min_node(t_node *stack);
 t_node	*find_max_node(t_node *stack);
 int	ft_strlen(char *str);
 void	swap(t_node **stack);
-void	sa(t_node **a);
-void	sb(t_node **b);
-void	ss(t_node **a, t_node **b);
+void	sa(t_node **a, t_bench *bench);
+void	sb(t_node **b, t_bench *bench);
+void	ss(t_node **a, t_node **b, t_bench *bench);
 void	push(t_node **src, t_node **dest);
-void	pa(t_node **a, t_node **b);
-void	pb(t_node **a, t_node **b);
+void	pa(t_node **a, t_node **b, t_bench *bench);
+void	pb(t_node **a, t_node **b, t_bench *bench);
 void	rotate(t_node **stack);
-void	ra(t_node **a);
-void	rb(t_node **b);
-void	rr(t_node **a, t_node **b);
+void	ra(t_node **a, t_bench *bench);
+void	rb(t_node **b, t_bench *bench);
+void	rr(t_node **a, t_node **b, t_bench *bench);
 void	print_op(char *op);
 void    reverse_rotate(t_node **stack);
-void    rra(t_node **a);
-void    rrb(t_node **b);
-void    rrr(t_node **a, t_node **b);
+void    rra(t_node **a, t_bench *bench);
+void    rrb(t_node **b, t_bench *bench);
+void    rrr(t_node **a, t_node **b, t_bench *bench);
 int is_valid_number(char *str);
 long    ft_atol(const char *str);
 int     is_int_range(char *str);
@@ -88,19 +115,32 @@ int is_strategy_flag(char *arg);
 t_strategy get_strategy(char *arg);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 t_strategy  select_adaptive(double disorder);
-void    move_to_top(t_node **a, t_node *target);
-void    move_to_top_b(t_node **b, t_node *target);
+void    move_to_top(t_node **a, t_node *target, t_bench *bench);
+void    move_to_top_b(t_node **b, t_node *target, t_bench *bench);
 int get_position(t_node *stack, t_node *target);
-void    simple_sort(t_node **a, t_node **b);
+void    simple_sort(t_node **a, t_node **b, t_bench *bench);
 void    assign_indexes(t_node *stack);
 t_node	*find_unindexed_min(t_node *stack);
 int		int_sqrt(int n);
 t_node	*find_max_index(t_node *stack);
-void    medium_sort(t_node **a, t_node **b);
+void    medium_sort(t_node **a, t_node **b, t_bench *bench);
 
-void	print_stack_reverse(t_node *stack);
+//jess
+int 		check_split(char *str);
+void    	free_split(char **numbers);
+int 		check_string(char *str);
+	// bench
+void    	print_op_count(t_bench *bench, int op, const char *name);
+void    	print_ops(t_bench *bench)
+const char	*strategy_label(t_strategy s)
+const char	*complexity_label(t_strategy s)
+void		put_percent(int fd, double ratio)
+void		bench_count(t_bench *bench, t_opcode code)
+void		bench_init(t_bench *bench)
+void		print_bench(t_bench *bench)
+	//functions to run the choosen strat
+t_strategy	apply_strat(t_flags *flags);
+void		run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench)
 
-int check_split(char *str);
-void    free_split(char **numbers);
-int check_string(char *str);
+
 #endif

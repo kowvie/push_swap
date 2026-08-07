@@ -1,2 +1,26 @@
 simple uses insertion sort?
 medium users Radix Sort?
+
+
+
+CHANGES !!!!!!
+
+addded flags struct to .h;
+added putnbr, putstr, and split to /libft
+added bench folder and files (empty);
+deleted parser.c;
+
+commited and pushed to git at 2:10pm 08/Aug;
+---------------------------------------------------------------------------------------------------------------------------
+added bench struct and count struct for op in .h;
+added function in main.c to run the sorting functions. and updated main to run with bench and all the made alterations;
+added bench to OPS functions
+added to bench.c
+- funtion to initialize everything at 0;
+- function to count moves;
+- function to print information of bench;
+added to bench_utils.c
+- functions to help print all of the information correctly
+- updated .h file;
+
+commited and pushed to git at pm 08/Aug;

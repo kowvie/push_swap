@@ -27,7 +27,7 @@ int get_position(t_node *stack, t_node *target)
     return (-1);
 }
 
-void    move_to_top(t_node **a, t_node *target)
+void    move_to_top(t_node **a, t_node *target, t_bench *bench)
 {
     int pos;
     int size;
@@ -37,13 +37,13 @@ void    move_to_top(t_node **a, t_node *target)
     while (*a != target)
     {
         if (pos <= (size / 2))
-            ra(a);
+            ra(a, bench);
         else
-            rra(a);
+            rra(a, bench);
     }
 }
 
-void    move_to_top_b(t_node **b, t_node *target)
+void    move_to_top_b(t_node **b, t_node *target, t_bench *bench)
 {
     int pos;
     int size;
@@ -53,8 +53,8 @@ void    move_to_top_b(t_node **b, t_node *target)
     while (*b != target)
     {
         if (pos <= (size / 2))
-            rb(b);
+            rb(b, bench);
         else
-            rrb(b);
+            rrb(b, bench);
     }
 }

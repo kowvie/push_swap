@@ -12,29 +12,32 @@
 
 #include "../../includes/push_swap.h"
 
-void    ra(t_node **a)
+void    ra(t_node **a, t_bench *bench)
 {
     if (!a || !*a || !(*a)->next)
         return ;
     rotate(a);
     print_op("ra");
+    bench_count(bench, OP_RA);
 }
 
-void    rb(t_node **b)
+void    rb(t_node **b, t_bench *bench)
 {
     if (!b || !*b || !(*b)->next)
         return ;
     rotate(b);
     print_op("rb");
+    bench_count(bench, OP_RB);
 }
 
-void    rr(t_node **a, t_node **b)
+void    rr(t_node **a, t_node **b, t_bench *bench)
 {
     if ((!a || !*a  || !(*a)->next) && (!b || !*b || !(*b)->next))
         return ;
     rotate(a);
     rotate(b);
     print_op("rr");
+    bench_count(bench, OP_RR);
 }
 void    rotate(t_node **stack)
 {

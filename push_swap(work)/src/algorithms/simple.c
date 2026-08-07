@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void    simple_sort(t_node **a, t_node **b)
+void    simple_sort(t_node **a, t_node **b, t_bench *bench)
 {
     t_node  *min;
     
@@ -21,12 +21,12 @@ void    simple_sort(t_node **a, t_node **b)
     while (*a != NULL)
     {
         min = find_min_node(*a);
-        move_to_top(a, min);
-        pb(a, b);
+        move_to_top(a, min, bench);
+        pb(a, b, bench);
     }
     while (*b != NULL)
     {
-        pa (a, b);
+        pa (a, b, bench);
     }
 }
 
