@@ -29,3 +29,8 @@ void    simple_sort(t_node **a, t_node **b)
         pa (a, b);
     }
 }
+
+/*O(n2): pick the min of the remaining stack a, rotate it to the top
+(O(n) worst case), push it to b. Repeat n times -> O(n2). Then push
+everything back from b to a, which restores ascending order because
+the smallest values were pushed to b first*/

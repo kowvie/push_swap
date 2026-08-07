@@ -1,47 +1,17 @@
-// argv[1]
-// argv[i]
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/07 12:33:56 by jsilva-r          #+#    #+#             */
+/*   Updated: 2026/08/07 12:33:56 by jsilva-r         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "../includes/push_swap.h"
 
-/*
-    primeiro fazer validacao para varios args ex. ./push_swap -1 2 3 4 5 6
-    depois fazer para so um arg ex. ./push_swap "1 2 3 4 5 6"
-
-            ITS PSEUDO CODIGO TIMEEEEEEEEEEEEEEEEEEEEEEEEEE
-
-
-            negative and/or positive numbers
-                without any duplicate
-
-        IF ARGS == "./push_swap" "1 2 3 4 5 6"
-        que 'e igual a:
-            argc == 2
-                vai fazer algo que nao 'e para agora
-        
-        IF NOT THAT AND ARGC > 2
-            WILLLL CHECK THE STINGS FOR JUST NUMBERSSSS
-
-            string = "+12"
-            if primeira posicao da string == + ou a - i++;
-            depois se voltar a aparecer algum + ou - 'e erro
-
-        podes ter uma funcao que valida uma string e essa funcao 'e chamada uma ver por cada argumento
-        ex:
-        while i < argc
-        {
-            funcao(argv[i]);
-            i++;
-        }
-
-*/
-
-/*
-    funcao para verificar se a string que receber
-    e ver se so tem +- e numeros e verificar se o + e - esta na localizacao correta
-*/
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-//begining of split
 static int	words_enumerator(const char *s, char c)
 {
 	int	i;
@@ -167,27 +137,3 @@ int check_split(char *str)
     }
     return (free_split(numbers), 1);
 }
-
-int main(int arc, char **arv)
-{
-    int i = 1;
-
-    if (arc < 2)
-        return (0);
-    if (arc == 2)
-    {
-       if (check_split(arv[i]) == 0)
-            return (0);
-    }
-    if (arc > 2)
-    {
-        while (i < arc){
-            printf("i: %d | argc: %d\n", i, arc);
-            if (check_string(arv[i]) == 0)
-                return (0);
-            i++;
-        }
-    }        
-}
-// deals with empty strings/spaces, non numeric chars, signal in wrong place,one or multiple arguments;
-// missing duplicate values, bigger than a 32 bits int

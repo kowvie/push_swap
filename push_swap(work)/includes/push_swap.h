@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/05 15:47:58 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/07 13:12:47 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+#include <stdbool.h>
 
 typedef struct s_node
 {
@@ -37,6 +38,15 @@ typedef	enum e_strategy
 	COMPLEX,
 	ADAPTIVE
 }	t_strategy;
+
+typedef struct s_flags
+{
+	bool	simple;
+	bool	medium;
+	bool	complex;
+	bool 	adaptive;
+	bool	bench;
+}	t_flags;
 
 t_node	*new_node(int value);
 void	stack_add_front(t_node **stack, t_node *new);
@@ -89,4 +99,8 @@ t_node	*find_max_index(t_node *stack);
 void    medium_sort(t_node **a, t_node **b);
 
 void	print_stack_reverse(t_node *stack);
+
+int check_split(char *str);
+void    free_split(char **numbers);
+int check_string(char *str);
 #endif

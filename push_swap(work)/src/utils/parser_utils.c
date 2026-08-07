@@ -52,11 +52,41 @@ int is_strategy_flag(char *arg)
     return (0);
 }
 
-t_strategy  select_adaptive(double disorder)
+static void	set_strategy_flag(t_flags *flags, t_strategy s)
 {
-    if (disorder < 0.2)
-        return (SIMPLE);
-    if (disorder < 0.5)
-        return (MEDIUM);
-    return (COMPLEX);
+    flags->simple = false;
+    flags->medium = false;
+    flags->complex = false;
+    flags->adaptive = false;
+    if (s == SIMPLE)
+        flags->simple = true;
+    else if (s == MEDIUM)
+        flags->medium = true;
+    else if (s == COMPLEX)
+        flags->complex = true;
+    else
+        flags->adaptive = true;
+}
+
+int check_flags(int argc, char **argv, t_flags *flags)
+{
+    int i;
+
+    i = 1;
+    flags->bench = false;
+    flags->simple = false;
+    flags->medium = false;
+    flags->complex = false;
+    flags->adaptive = false;
+    while(i < argc && is_strategy_flag(argv[i]))
+    {
+        if(ft_strncmp(arv[i], "--bench", 8) == 0)
+            flags->bench = true;
+        else
+            set_strategy_flag(flags, get_strategy(argv[i]));
+        i++;
+    }
+    if(!flags->simple && !flags->medium && !flags->complex && !flags->adaptive)
+        flags->adaptive = true;
+    return (i);
 }
