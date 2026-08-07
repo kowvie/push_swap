@@ -17,7 +17,8 @@ src/algorithms/simple.c src/ops_stack/disorder.c src/ops_stack/free.c \
 src/ops_stack/push.c src/ops_stack/reverse_rotate.c \
 src/ops_stack/rotate.c src/ops_stack/stack_create.c src/ops_stack/stack.c \
 src/ops_stack/swap.c src/parsing/error.c src/parsing/parser.c src/utils/parser_utils.c \
-src/utils/stack_utils.c main.c
+src/utils/stack_utils.c main.c src/bench/bench.c src/bench/bench_utils.c libft/ft_putnbr.c \
+libft/put_str.c
 
 INCLUDES = -Iincludes
 

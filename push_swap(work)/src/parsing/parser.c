@@ -78,17 +78,15 @@ int     has_duplicate(t_node *stack, int value)
     return (0);
 }
 
-t_node  *parse_args(int argc, char **argv)
+t_node  *parse_args(int argc, char **argv, int start)
 {
     t_node  *a;
     t_node  *new;
-    int i;
+    int     i;
     long    value;
 
     a = NULL;
-    i = 1;
-    if (argc > 1 && is_strategy_flag(argv[1]))
-        i = 2;
+    i = start;
     while(i < argc)
     {
         if (!is_valid_number(argv[i]))

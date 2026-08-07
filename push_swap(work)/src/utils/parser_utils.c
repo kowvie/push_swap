@@ -49,6 +49,8 @@ int is_strategy_flag(char *arg)
         return (1);
     if (ft_strncmp(arg, "--adaptive", 11) == 0)
         return (1);
+    if (ft_strncmp(arg, "--bench", 8) == 0)
+        return (1);
     return (0);
 }
 
@@ -80,7 +82,7 @@ int check_flags(int argc, char **argv, t_flags *flags)
     flags->adaptive = false;
     while(i < argc && is_strategy_flag(argv[i]))
     {
-        if(ft_strncmp(arv[i], "--bench", 8) == 0)
+        if(ft_strncmp(argv[i], "--bench", 8) == 0)
             flags->bench = true;
         else
             set_strategy_flag(flags, get_strategy(argv[i]));

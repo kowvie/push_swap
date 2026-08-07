@@ -44,5 +44,5 @@ void    pb(t_node **a, t_node **b, t_bench *bench)
         return ;
     push(a, b);
     print_op("pb");
-    bench_(bench, OP_PB);
+    bench_count(bench, OP_PB);
 }

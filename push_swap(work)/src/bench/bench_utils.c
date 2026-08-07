@@ -15,7 +15,7 @@
 void    print_op_count(t_bench *bench, int op, const char *name)
 {
     put_str(2, name);
-    put_nbr(2, *bench->counts[op]);
+    put_nbr(2, bench->counts[op]);
 }
 
 void    print_ops(t_bench *bench)

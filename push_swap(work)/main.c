@@ -31,7 +31,7 @@ t_strategy	apply_strat(t_flags *flags)
 	if (flags->medium)
 		return (MEDIUM);
 	if (flags->complex)
-		return (COMPLEX)
+		return (COMPLEX);
 	else
 		return (ADAPTIVE);
 }
@@ -43,9 +43,9 @@ void	run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench)
 		simple_sort(a, b, bench);
 	else if (strategy == MEDIUM)
 		medium_sort(a, b, bench);
-	else if (strategy == COMPLEX)
+	//else if (strategy == COMPLEX)
 		//add complex funtion 
-	else
+	//else
 		// add adaptive function
 }
 
@@ -60,18 +60,18 @@ int	main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	i = check_flags(argc, argv, &flags)
+	i = check_flags(argc, argv, &flags);
 	if (i >= argc)
 		return (0);
-	a = parse_args(argc, argv);
+	a = parse_args(argc, argv, i);
 	if (!a)
 		return (0);
 	b = NULL;
 	strategy = apply_strat(&flags);
 	bench_init(&bench);
-	bench.active = flag.bench;
+	bench.active = flags.bench;
 	bench.disorder = compute_disorder(a);
-	run_strat(strategy, &a, &b, &bench)
+	run_strat(strategy, &a, &b, &bench);
 	print_bench(&bench);
 	free_stack(&a);
 	free_stack(&b);

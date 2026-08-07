@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/07 16:22:12 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/07 22:44:43 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ int     is_int_range(char *str);
 void    error_exit(void);
 int	has_duplicate(t_node *stack, int value);
 void	error_free(t_node **stack);
-t_node	*parse_args(int argc, char **argv);
+t_node	*parse_args(int argc, char **argv, int start);
 double  compute_disorder(t_node *a);
 int is_strategy_flag(char *arg);
 t_strategy get_strategy(char *arg);
@@ -129,18 +129,21 @@ void    medium_sort(t_node **a, t_node **b, t_bench *bench);
 int 		check_split(char *str);
 void    	free_split(char **numbers);
 int 		check_string(char *str);
+int 		check_flags(int argc, char **argv, t_flags *flags);
+void		put_nbr(int fd, long n);
+void    	put_str(int fd, const char *s);
 	// bench
 void    	print_op_count(t_bench *bench, int op, const char *name);
-void    	print_ops(t_bench *bench)
-const char	*strategy_label(t_strategy s)
-const char	*complexity_label(t_strategy s)
-void		put_percent(int fd, double ratio)
-void		bench_count(t_bench *bench, t_opcode code)
-void		bench_init(t_bench *bench)
-void		print_bench(t_bench *bench)
+void    	print_ops(t_bench *bench);
+const char	*strategy_label(t_strategy s);
+const char	*complexity_label(t_strategy s);
+void		put_percent(int fd, double ratio);
+void		bench_count(t_bench *bench, t_opcode code);
+void		bench_init(t_bench *bench);
+void		print_bench(t_bench *bench);
 	//functions to run the choosen strat
 t_strategy	apply_strat(t_flags *flags);
-void		run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench)
+void		run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench);
 
 
 #endif

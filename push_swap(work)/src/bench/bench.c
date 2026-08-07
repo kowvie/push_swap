@@ -12,7 +12,7 @@
 
 #include "../../includes/push_swap.h"
 
-void	bench_count(t_bench *bench, t_opcode code)
+void	bench_count(t_bench *bench, t_countop code)
 {
 	if (!bench || code < 0 || code >= OP_COUNT)
 		return ;
