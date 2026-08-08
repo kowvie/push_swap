@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/07 22:44:43 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/08 10:49:41 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void    	print_ops(t_bench *bench);
 const char	*strategy_label(t_strategy s);
 const char	*complexity_label(t_strategy s);
 void		put_percent(int fd, double ratio);
-void		bench_count(t_bench *bench, t_opcode code);
+void		bench_count(t_bench *bench, t_countop code);
 void		bench_init(t_bench *bench);
 void		print_bench(t_bench *bench);
 	//functions to run the choosen strat
