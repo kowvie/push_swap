@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/08 10:49:41 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/10 18:12:01 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,6 +144,12 @@ void		print_bench(t_bench *bench);
 	//functions to run the choosen strat
 t_strategy	apply_strat(t_flags *flags);
 void		run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench);
-
+//complex
+int     *stack_to_array(t_node *a, int size);
+void    sort_array(int *arr, int size);
+void    assign_index(t_node *a, int *sorted, int size);
+int 	get_max_bits(t_node *a);
+void    radix_sort(t_node **a, t_node **b, t_bench *bench);
+int     stack_size(t_node *a);
 
 #endif
