@@ -24,3 +24,37 @@ added to bench_utils.c
 - updated .h file;
 
 commited and pushed to git at pm 08/Aug;
+
+
+// int	main(int argc, char **argv){
+// 	t_node	*a;
+// 	t_node	*b;
+// 	t_bench	bench;
+// 	t_flags	flags;
+// 	int i;
+
+// 	if (argc < 2)
+// 		return (0);
+// 	i = check_flags(argc, argv, &flags);
+// 	if (i >= argc)
+// 		return (0);
+// 	a = parse_args(argc, argv, i);
+// 	if (!a)
+// 		return (0);
+// 	b = NULL;
+// 	printf("Antes:\n");
+// 	printf("A: ");
+// 	print_stack(a);
+// 	printf("B: ");
+// 	print_stack(b);
+// 	printf("\nOperacoes:\n");
+// 	radix_sort(&a, &b, &bench);
+// 	printf("\nDepois:\n");
+// 	printf("A: ");
+// 	print_stack(a);
+// 	printf("B: ");
+// 	print_stack(b);
+// 	printf("Sorted: %d\n", is_sorted(a));
+// 	free_stack(&a);
+// 	free_stack(&b);
+// }

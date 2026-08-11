@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:44 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/06 11:37:39 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/11 10:45:22 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,10 @@ void	run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench)
 		simple_sort(a, b, bench);
 	else if (strategy == MEDIUM)
 		medium_sort(a, b, bench);
-	//else if (strategy == COMPLEX)
-		//add complex funtion 
-	//else
-		// add adaptive function
+	else if (strategy == COMPLEX)
+		radix_sort(a, b, bench);
+	else
+		adaptive_sort(a, b, bench);
 }
 
 int	main(int argc, char **argv)
