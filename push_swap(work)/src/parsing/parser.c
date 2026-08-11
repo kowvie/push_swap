@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:56 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/06 11:35:42 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/11 12:02:14 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,7 @@ t_node  *parse_args(int argc, char **argv, int start)
             error_free(&a);
         new = new_node((int)value);
         if (!new)
-        {
-            free_stack(&a);
-            return (NULL);
-        }
+            return (free_stack(&a), NULL);
         stack_add_back(&a, new);
         i++;
     }

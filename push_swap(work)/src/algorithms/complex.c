@@ -34,8 +34,6 @@ int     *stack_to_array(t_node *a, int size)
     return (arr);
 }
 
-
-
 void    sort_array(int *arr, int size)
 {
     int i;

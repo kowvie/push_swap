@@ -17,9 +17,9 @@ Operations include:
 - `rrr`: rra and rrb at the same time.
 
 The project makes us implement four sorting strategies using the push_swap operations to perform the sorting.
-- `Simple algorithm (O(n2))` we decided on:
-- `Medium algorithm  (O(n√n))` we decided on :
-- `Complex algorithm (O(n log n))` we decided on: 
+- `Simple algorithm (O(n2))` we decided on: Bouble Sort
+- `Medium algorithm  (O(n√n))` we decided on : Chunks Sort
+- `Complex algorithm (O(n log n))` we decided on: Radix Sort
 
 The projects has a `disorder metric` that we need to implement not only to know how disorganized is the stack but it will also be usefull in our `Custom algorithm`. Its mandatory to measure the disorder before doing any moves.
 

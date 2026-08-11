@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 14:04:01 by jsilva-r          #+#    #+#             */
-/*   Updated: 2026/08/07 14:04:01 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/11 12:04:34 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void print_bench(t_bench *bench)
 {
     if (!bench || !bench->active)
         return;
-
     put_str(2, "[bench] disorder: ");
     put_percent(2, bench->disorder);
     put_str(2, "[bench] strategy: ");
@@ -56,6 +55,5 @@ void print_bench(t_bench *bench)
     put_str(2, "[bench] total_ops: ");
     put_nbr(2, bench->total);
     put_str(2, "\n");
-
     print_ops(bench);
 }
