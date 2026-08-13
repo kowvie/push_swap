@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:56 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/13 15:57:38 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/13 17:32:34 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,10 +90,7 @@ t_node  *parse_args(int argc, char **argv, int start)
     a = NULL;
     i = start;
     if(i == argc -1)
-    {
-        a = check_split(argv[i]);
-        return (a);
-    }
+        return (check_split(argv[i]));
     while(i < argc)
     {
         if (!is_valid_number(argv[i]) || !is_int_range(argv[i]))

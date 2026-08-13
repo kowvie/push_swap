@@ -6,24 +6,12 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:44 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/11 10:45:22 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/13 17:37:06 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/push_swap.h"
-#include <stdio.h>
 
-// static void	print_stack(t_node *stack)
-// {
-// 	while (stack)
-// 	{
-// 		printf("%d", stack->value);
-// 		if (stack->next)
-// 			printf(" ");
-// 		stack = stack->next;
-// 	}
-// 	printf("\n");
-// }
 t_strategy	apply_strat(t_flags *flags)
 {
 	if (flags->simple)
@@ -77,20 +65,3 @@ int	main(int argc, char **argv)
 	free_stack(&b);
 	return (0);
 }
-
-	// printf("Antes:\n");
-	// printf("A: ");
-	// print_stack(a);
-	// printf("B: ");
-	// print_stack(b);
-	// printf("\nOperacoes:\n");
-	// medium_sort(&a, &b);
-	// printf("\nDepois:\n");
-	// printf("A: ");
-	// print_stack(a);
-	// printf("B: ");
-	// print_stack(b);
-	// printf("Sorted: %d\n", is_sorted(a));
-	// free_stack(&a);
-	// free_stack(&b);
-	// return (0);

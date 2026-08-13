@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/13 16:01:47 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/13 17:49:47 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,10 @@ t_node *check_split(char *str);
 void    	free_split(char **numbers);
 int 		check_string(char *str);
 int 		check_flags(int argc, char **argv, t_flags *flags);
+int	words_enumerator(const char *s, char c);
+char	*word_splitter(const char *s, char c);
+char	**revolucion(char **words, int j);
+char	**ft_split(char const *s, char c);
 void		put_nbr(int fd, long n);
 void    	put_str(int fd, const char *s);
 	// bench
