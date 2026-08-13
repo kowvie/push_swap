@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 12:33:56 by jsilva-r          #+#    #+#             */
-/*   Updated: 2026/08/07 12:33:56 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/13 16:05:20 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,18 +122,31 @@ void    free_split(char **numbers)
     free(numbers);
 }
 
-int check_split(char *str)
+t_node *check_split(char *str)
 {
     char **numbers;
+	long	value;
+	t_node 	*new;
+	t_node 	*a;
+	
     numbers = ft_split(str, ' ');
     int i = 0;
+	a = NULL;
+	new = NULL;
     if (numbers[i] == NULL)
-        return (printf("error\n"), free_split(numbers), 0);
+        return (printf("error\n"), free_split(numbers), NULL);
     while (numbers[i] != NULL)
     {
-            if (check_string(numbers[i]) == 0)
-                return (printf("error\n"), free_split(numbers), 0);
-            i++;
+        if (!is_valid_number(numbers[i]) || !is_int_range(numbers[i]))
+            error_free(&a);
+        value = ft_atol(numbers[i]);
+        if (has_duplicate(a, (int)value))
+            error_free(&a);
+        new = new_node((int)value);
+        if (!new)
+            return (free_stack(&a), NULL);
+        stack_add_back(&a, new);
+        i++;
     }
-    return (free_split(numbers), 1);
+    return (free_split(numbers), a);
 }

@@ -17,7 +17,7 @@ Operations include:
 - `rrr`: rra and rrb at the same time.
 
 The project makes us implement four sorting strategies using the push_swap operations to perform the sorting.
-- `Simple algorithm (O(n2))` we decided on: Bouble Sort
+- `Simple algorithm (O(n2))` we decided on: Selection Sort
 - `Medium algorithm  (O(n√n))` we decided on : Chunks Sort
 - `Complex algorithm (O(n log n))` we decided on: Radix Sort
 

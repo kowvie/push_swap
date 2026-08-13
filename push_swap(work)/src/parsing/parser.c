@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:56 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/11 12:02:14 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/13 15:57:38 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ int     has_duplicate(t_node *stack, int value)
     }
     return (0);
 }
+#include <stdio.h>
+
 
 t_node  *parse_args(int argc, char **argv, int start)
 {
@@ -87,11 +89,14 @@ t_node  *parse_args(int argc, char **argv, int start)
 
     a = NULL;
     i = start;
+    if(i == argc -1)
+    {
+        a = check_split(argv[i]);
+        return (a);
+    }
     while(i < argc)
     {
-        if (!is_valid_number(argv[i]))
-            error_free(&a);
-        if (!is_int_range(argv[i]))
+        if (!is_valid_number(argv[i]) || !is_int_range(argv[i]))
             error_free(&a);
         value = ft_atol(argv[i]);
         if (has_duplicate(a, (int)value))

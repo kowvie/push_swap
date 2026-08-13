@@ -6,7 +6,7 @@
 /*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/11 10:55:55 by jsilva-r         ###   ########.fr       */
+/*   Updated: 2026/08/13 16:01:47 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 typedef struct s_node
 {
@@ -126,7 +127,7 @@ t_node	*find_max_index(t_node *stack);
 void    medium_sort(t_node **a, t_node **b, t_bench *bench);
 
 //jess
-int 		check_split(char *str);
+t_node *check_split(char *str);
 void    	free_split(char **numbers);
 int 		check_string(char *str);
 int 		check_flags(int argc, char **argv, t_flags *flags);
