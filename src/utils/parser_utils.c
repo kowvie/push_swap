@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser_utils.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:50 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/13 18:49:44 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/15 00:24:38 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,12 @@ int	is_strategy_flag(char *arg)
 
 static void	set_strategy_flag(t_flags *flags, t_strategy s)
 {
-	flags->simple = false;
-	flags->medium = false;
-	flags->complex = false;
-	flags->adaptive = false;
+	if (s == SIMPLE && flags->simple == true)
+		error_exit();
+	else if (s == MEDIUM && flags->medium == true)
+		error_exit();
+	else if (s == COMPLEX && flags->complex == true)
+		error_exit();
 	if (s == SIMPLE)
 		flags->simple = true;
 	else if (s == MEDIUM)
@@ -82,14 +84,13 @@ int	check_flags(int argc, char **argv, t_flags *flags)
 	flags->adaptive = false;
 	while (i < argc && is_strategy_flag(argv[i]))
 	{
+		if (ft_strncmp(argv[i], "--bench", 8) == 0 && flags->bench == true)
+			error_exit();
 		if (ft_strncmp(argv[i], "--bench", 8) == 0)
 			flags->bench = true;
 		else
 			set_strategy_flag(flags, get_strategy(argv[i]));
 		i++;
 	}
-	if (!flags->simple && !flags->medium && !flags->complex
-		&& !flags->adaptive)
-		flags->adaptive = true;
 	return (i);
 }
