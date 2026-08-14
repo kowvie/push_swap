@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/07 12:33:56 by jsilva-r          #+#    #+#             */
-/*   Updated: 2026/08/13 18:38:23 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:02:50 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	words_enumerator(const char *s, char c)
+int	words_enum(const char *s, char c)
 {
 	int	i;
 	int	words;
@@ -73,8 +73,7 @@ char	**ft_split(char const *s, char c)
 
 	i = 0;
 	j = 0;
-	words = (char **)malloc(sizeof(char *)
-			* (words_enumerator(s, c) + 1));
+	words = (char **)malloc(sizeof(char *) * (words_enum(s, c) + 1));
 	if (!words || !s)
 		return (NULL);
 	while (s[i])

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/07/30 11:22:18 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/13 18:28:48 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:03:33 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,11 +125,11 @@ int			int_sqrt(int n);
 t_node		*find_max_index(t_node *stack);
 void		medium_sort(t_node **a, t_node **b, t_bench *bench);
 //jess
-t_node		*check_split(char *str);
+t_node		*check_split(char *str, int i);
 void		free_split(char **numbers);
 int			check_string(char *str);
 int			check_flags(int argc, char **argv, t_flags *flags);
-int			words_enumerator(const char *s, char c);
+int			words_enum(const char *s, char c);
 char		*word_splitter(const char *s, char c);
 char		**revolucion(char **words, int j);
 char		**ft_split(char const *s, char c);
@@ -146,7 +146,8 @@ void		bench_init(t_bench *bench);
 void		print_bench(t_bench *bench);
 	//functions to run the choosen strat
 t_strategy	apply_strat(t_flags *flags);
-void		run_strat(t_strategy strategy, t_node **a, t_node **b, t_bench *bench);
+void		run_strat(t_strategy strategy, t_node **a, t_node **b,
+				t_bench *bench);
 //complex
 int			*stack_to_array(t_node *a, int size);
 void		sort_array(int *arr, int size);

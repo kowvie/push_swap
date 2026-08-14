@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/05 11:33:56 by husobral          #+#    #+#             */
-/*   Updated: 2026/08/13 18:48:55 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:03:48 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ t_node	*parse_args(int argc, char **argv, int start)
 	a = NULL;
 	i = start;
 	if (i == argc - 1)
-		return (check_split(argv[i]));
+		return (check_split(argv[i], 0));
 	while (i < argc)
 	{
 		if (!is_valid_number(argv[i]) || !is_int_range(argv[i]))

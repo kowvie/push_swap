@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: husobral <husobral@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jsilva-r <jsilva-r@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 17:41:08 by jsilva-r          #+#    #+#             */
-/*   Updated: 2026/08/13 18:40:02 by husobral         ###   ########.fr       */
+/*   Updated: 2026/08/14 20:03:24 by jsilva-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ void	free_split(char **numbers)
 	free(numbers);
 }
 
-t_node	*check_split(char *str)
+t_node	*check_split(char *str, int i)
 {
 	char	**numbers;
 	long	value;
 	t_node	*new;
 	t_node	*a;
-	int		i;
 
 	numbers = ft_split(str, ' ');
 	i = 0;
