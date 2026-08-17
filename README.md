@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by husobral and jsilva-r.*
+*This project has been created as part of the 42 curriculum by husobral, jsilva-r.*
 
 ## Description
 Push_swap is a algorithim projects where the data in two stacks `a` and `b`, must be sorted by ascending order in a limited number of operations.
